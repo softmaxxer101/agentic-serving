@@ -3,67 +3,33 @@
 
 # Agentic Serving Benchmark
 
-
-
 A reproducible benchmarking project for evaluating local LLM serving performance under agentic workloads.
-
-
-
 The project studies how vLLM configuration choices affect latency, throughput, GPU memory usage, prefix caching, tool-call reliability, speculative decoding, scheduling, compilation, and overload behavior.
-
-
-
 The current implementation uses Qwen3-0.6B served by vLLM on an NVIDIA RTX 3050 Laptop GPU. The design is intentionally modular so it can later scale to larger models, stronger GPUs, and production-like workloads.
-
-
 
 ## Project Goals
 
-
-
 This project evaluates:
 
-
-
 - Time to first token (TTFT)
-
 - Inter-token latency (ITL)
-
 - End-to-end request latency
-
 - Session completion time
-
 - Input and output token throughput
-
 - Prefix-cache effectiveness
-
 - Tool-call JSON validity
-
 - Context-length failures
-
 - GPU memory limits
-
 - Scheduler behavior
-
 - CUDA graph and torch compilation effects
-
 - Speculative decoding
-
 - CPU offloading
-
 - Overload behavior
-
 - Reproducibility of agentic request traces
-
-
 
 The benchmark separates workload generation from model execution. This allows the same workload to be replayed across different server configurations.
 
-
-
 ## System Used
-
-
 
 | Component | Value |
 
