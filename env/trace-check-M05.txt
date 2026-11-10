@@ -1,0 +1,1 @@
+requests 1560 max prompt tokens 9923 over limit (prompt+512 > LIM) 17 ideal hit rate 0.847

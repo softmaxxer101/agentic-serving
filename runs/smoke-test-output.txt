@@ -1,0 +1,10 @@
+PLAIN content: 
+
+Hi! How are you?
+PLAIN reasoning: 
+Okay, the user asked "Say hi in 5 words." Let me think. I need to provide a response that is concise and friendly. The key here is to make sure it's exactly five words. Let me start with "Hi!" which is a common greeting. Then add two more words to make it five. Maybe "How are you?" to add some context. Wait, but that's four words. Let me check again. "Hi! How are you?" That's five words. Yes, that works. I should confirm that there's no more than five words and that it's a natural, friendly response. Alright, that should do it.
+
+CompletionUsage(completion_tokens=145, prompt_tokens=15, total_tokens=160, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=135, rejected_prediction_tokens=None, text_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=0, image_tokens=None, text_tokens=None, created_cache_tokens=0, multimodal_tokens=None))
+NOTHINK content: Hello! How can I assist you today?
+CompletionUsage(completion_tokens=10, prompt_tokens=19, total_tokens=29, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=None, reasoning_tokens=0, rejected_prediction_tokens=None, text_tokens=None), prompt_tokens_details=PromptTokensDetails(audio_tokens=None, cache_write_tokens=None, cached_tokens=16, image_tokens=None, text_tokens=None, created_cache_tokens=0, multimodal_tokens=None))
+TOOLS: [ChatCompletionMessageFunctionToolCall(id='chatcmpl-tool-9e2b93af6d1b8c44', function=Function(arguments='{"expr": "123*45"}', name='calculator'), type='function')] tool_calls

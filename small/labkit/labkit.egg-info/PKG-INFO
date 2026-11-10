@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: labkit
+Version: 1.0.0
+Summary: Agentic Serving Lab Kit for vLLM 0.32.0 on an RTX 2050 4GB (Qwen3-0.6B)
+Requires-Python: >=3.10
+Requires-Dist: openai
+Requires-Dist: httpx
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: psutil
+Requires-Dist: huggingface_hub
+Requires-Dist: transformers
+Requires-Dist: fastapi
+Requires-Dist: uvicorn

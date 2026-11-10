@@ -1,0 +1,10 @@
+openai
+httpx
+numpy
+pandas
+matplotlib
+psutil
+huggingface_hub
+transformers
+fastapi
+uvicorn

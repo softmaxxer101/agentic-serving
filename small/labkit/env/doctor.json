@@ -1,0 +1,25 @@
+{
+  "time": "2026-11-10 11:09:18",
+  "target_vllm": "0.32.0",
+  "python": "3.12.13",
+  "wsl": true,
+  "vllm": "0.31.0",
+  "gpu_summary": "NVIDIA GeForce RTX 3050 6GB Laptop GPU, 610.88, 6144 MiB, 115 MiB, [N/A]",
+  "vram_idle_mb": 115,
+  "vram_total_mb": 6144,
+  "cuda": true,
+  "capability": [
+    8,
+    6
+  ],
+  "bandwidth_gbs": 117.73048070294887,
+  "h2d_gbs": 5.828827070586316,
+  "kv_bytes_per_token": 114688,
+  "weights_bytes": 1503300328,
+  "layers": 28,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "itl_floor_ms": 12.768998470269102,
+  "kv_tokens_estimate_base": 23405.17565569197,
+  "flags_detected": 438
+}
