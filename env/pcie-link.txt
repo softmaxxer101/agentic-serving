@@ -1,0 +1,2 @@
+pcie.link.gen.current, pcie.link.gen.max, pcie.link.width.current, pcie.link.width.max
+4, 4, 4, 16

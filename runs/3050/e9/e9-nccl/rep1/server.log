@@ -1,0 +1,1337 @@
+/home/alis/project/venv/lib/python3.12/site-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347] 
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347]        █     █     █▄   ▄█
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.31.0
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347]   █▄█▀ █     █     █     █  model   Qwen/Qwen3-0.6B
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:347] 
+(APIServer pid=25103) INFO 11-10 22:00:27 [api_utils.py:286] non-default args: {'model_tag': 'Qwen/Qwen3-0.6B', 'enable_auto_tool_choice': True, 'tool_call_parser': 'hermes', 'enable_prompt_tokens_details': True, 'api_key': '***', 'max_model_len': 8192, 'enforce_eager': True, 'reasoning_parser': 'qwen3', 'gpu_memory_utilization': 0.75, 'max_num_seqs': 16}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(APIServer pid=25103) INFO 11-10 22:00:28 [model.py:699] Resolved architecture: Qwen3ForCausalLM
+(APIServer pid=25103) INFO 11-10 22:00:28 [model.py:2109] Using max model len 8192
+(APIServer pid=25103) WARNING 11-10 22:00:29 [vllm.py:1706] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(APIServer pid=25103) WARNING 11-10 22:00:29 [vllm.py:1750] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(APIServer pid=25103) INFO 11-10 22:00:29 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(APIServer pid=25103) INFO 11-10 22:00:29 [vllm.py:1968] Cudagraph is disabled under eager mode
+(APIServer pid=25103) INFO 11-10 22:00:31 [compilation.py:331] Enabled custom fusions: norm_quant, act_quant
+/home/alis/project/venv/lib/python3.12/site-packages/huggingface_hub/constants.py:302: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+(EngineCore pid=25238) INFO 11-10 22:00:39 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='Qwen/Qwen3-0.6B', speculative_config=None, tokenizer='Qwen/Qwen3-0.6B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=main, tokenizer_revision=main, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='qwen3', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=Qwen/Qwen3-0.6B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=False, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=25238) INFO 11-10 22:00:40 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_b7abb8997ff54920ab905c4e52e430e1 backend=nccl
+(EngineCore pid=25238) INFO 11-10 22:00:40 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=25238) INFO 11-10 22:00:40 [gpu_worker.py:479] Using V2 Model Runner
+(EngineCore pid=25238) WARNING 11-10 22:00:42 [buffer_utils.py:47] Pinned memory is not available on this platform; falling back to device memory for UVA buffers.
+(EngineCore pid=25238) INFO 11-10 22:00:42 [model_runner.py:375] Loading model from scratch...
+(EngineCore pid=25238) INFO 11-10 22:00:44 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=25238) INFO 11-10 22:00:44 [flash_attn.py:1167] Using FlashAttention version 2
+(EngineCore pid=25238) INFO 11-10 22:00:45 [weight_utils.py:1063] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.40 GiB. Available RAM: 4.55 GiB.
+(EngineCore pid=25238) INFO 11-10 22:00:45 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:08<00:00,  8.44s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:08<00:00,  8.44s/it]
+
+(EngineCore pid=25238) INFO 11-10 22:00:54 [default_loader.py:484] Loading weights took 8.45 seconds
+(EngineCore pid=25238) INFO 11-10 22:00:56 [model_runner.py:407] Model loading took 1.12 GiB memory and 14.202009 seconds
+(EngineCore pid=25238) INFO 11-10 22:00:56 [topk_topp_sampler.py:124] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=25238) INFO 11-10 22:00:56 [torch_utils.py:286] Reducing Torch threads from 8 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=25238) INFO 11-10 22:00:56 [utils.py:343] Using LBNHC KV cache layout.
+(EngineCore pid=25238) INFO 11-10 22:01:01 [gpu_worker.py:692] Available KV cache memory: 3.19 GiB
+(EngineCore pid=25238) INFO 11-10 22:01:01 [kv_cache_utils.py:2464] GPU KV cache size: 29,888 tokens, Maximum concurrency for 8,192 tokens per request: 3.65x
+(EngineCore pid=25238) INFO 11-10 22:01:01 [gpu_worker.py:955] Free memory on device (5.03/6.0 GiB) on startup. Desired GPU memory utilization is (0.75, 4.5 GiB). Actual usage is 1.26 GiB for consumed memory (weights + non-torch), 0.05 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=3271161856` (3.05 GiB) to fit into requested memory, or `--kv-cache-memory=3843028992` (3.58 GiB) to fully utilize gpu memory. Current kv cache memory in use is 3.19 GiB.
+(EngineCore pid=25238) INFO 11-10 22:01:02 [core.py:380] init engine (profile, create kv cache, warmup model) took 5.66 s
+(EngineCore pid=25238) WARNING 11-10 22:01:04 [vllm.py:1706] Enforce eager set, disabling torch.compile, CUDAGraphs, and JIT kernel warmup. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none and --kernel_config.enable_jit_warmup=False
+(EngineCore pid=25238) WARNING 11-10 22:01:04 [vllm.py:1750] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=25238) INFO 11-10 22:01:04 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native'])
+(EngineCore pid=25238) INFO 11-10 22:01:04 [vllm.py:1968] Cudagraph is disabled under eager mode
+(EngineCore pid=25238) INFO 11-10 22:01:04 [compilation.py:331] Enabled custom fusions: norm_quant, act_quant
+(APIServer pid=25103) INFO 11-10 22:01:04 [entry.py:132] Supported tasks: ['generate']
+(APIServer pid=25103) INFO 11-10 22:01:04 [factories.py:76] Scale-out endpoints are disabled. Set --enable-scale-out to enable them.
+(APIServer pid=25103) INFO 11-10 22:01:04 [parser_manager.py:35] "auto" tool choice has been enabled.
+(APIServer pid=25103) INFO 11-10 22:01:07 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(APIServer pid=25103) WARNING 11-10 22:01:07 [model.py:1850] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=25103) INFO 11-10 22:01:07 [entry.py:136] Starting vLLM server on http://0.0.0.0:8000
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:60] Available routes are:
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /openapi.json, Methods: HEAD, GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /docs, Methods: HEAD, GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /redoc, Methods: HEAD, GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /load, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /version, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /kv_event_sources, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /health, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /metrics, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /tokenize, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /detokenize, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/models, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /ping, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /ping, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /invocations, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/chat/completions/batch, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/responses, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/completions, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/messages, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /generative_scoring, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=25103) INFO 11-10 22:01:07 [launcher.py:69] Route: /is_scaling_elastic_ep, Methods: POST
+INFO:     Started server process [25103]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57402 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57406 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57412 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57440 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57448 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57462 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57440 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57440 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42006 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42020 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:01:17 [loggers.py:320] Engine 000: Avg prompt throughput: 111.4 tokens/s, Avg generation throughput: 8.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 3.9%, Prefix cache hit rate: 55.3%
+INFO:     127.0.0.1:42022 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42038 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42060 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42080 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42092 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42100 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39160 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:01:27 [loggers.py:320] Engine 000: Avg prompt throughput: 40.2 tokens/s, Avg generation throughput: 23.5 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 5.2%, Prefix cache hit rate: 60.8%
+INFO:     127.0.0.1:39170 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39178 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39196 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39200 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39206 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39216 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39232 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39244 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50222 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:01:37 [loggers.py:320] Engine 000: Avg prompt throughput: 31.8 tokens/s, Avg generation throughput: 25.5 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 6.3%, Prefix cache hit rate: 66.7%
+INFO:     127.0.0.1:50230 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50242 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50254 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50262 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50274 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50278 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50288 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50306 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33896 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:01:47 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 20.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 7.0%, Prefix cache hit rate: 66.7%
+INFO:     127.0.0.1:33910 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33918 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33950 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33958 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33976 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33992 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34002 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44252 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:01:57 [loggers.py:320] Engine 000: Avg prompt throughput: 17.4 tokens/s, Avg generation throughput: 19.8 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 6.8%, Prefix cache hit rate: 72.3%
+INFO:     127.0.0.1:44258 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44266 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44280 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44294 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44308 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44324 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44338 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44348 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44350 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51028 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:07 [loggers.py:320] Engine 000: Avg prompt throughput: 12.3 tokens/s, Avg generation throughput: 26.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 7.3%, Prefix cache hit rate: 76.6%
+INFO:     127.0.0.1:51040 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51050 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51072 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51082 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51114 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51120 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51136 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50770 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:17 [loggers.py:320] Engine 000: Avg prompt throughput: 20.7 tokens/s, Avg generation throughput: 22.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 7.9%, Prefix cache hit rate: 79.1%
+INFO:     127.0.0.1:50776 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50786 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50794 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50806 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50814 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50830 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50838 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50848 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43290 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43304 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:27 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 22.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 8.6%, Prefix cache hit rate: 79.1%
+INFO:     127.0.0.1:43312 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43314 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43322 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43330 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43334 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43342 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43354 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43370 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46074 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46078 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:37 [loggers.py:320] Engine 000: Avg prompt throughput: 39.7 tokens/s, Avg generation throughput: 25.8 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 9.3%, Prefix cache hit rate: 80.1%
+INFO:     127.0.0.1:46094 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46104 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46106 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46118 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46120 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46132 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46142 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33732 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33740 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:47 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 19.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 10.0%, Prefix cache hit rate: 80.1%
+INFO:     127.0.0.1:33748 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33756 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33762 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33772 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33782 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33790 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33798 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33808 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35868 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35876 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:02:57 [loggers.py:320] Engine 000: Avg prompt throughput: 10.8 tokens/s, Avg generation throughput: 15.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 9.6%, Prefix cache hit rate: 82.5%
+INFO:     127.0.0.1:35892 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35902 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35918 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35926 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35996 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36010 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36022 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46378 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:07 [loggers.py:320] Engine 000: Avg prompt throughput: 335.7 tokens/s, Avg generation throughput: 31.7 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 15.5%, Prefix cache hit rate: 74.6%
+INFO:     127.0.0.1:46392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46394 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46404 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46416 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46432 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46442 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46458 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46470 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46482 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52050 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:17 [loggers.py:320] Engine 000: Avg prompt throughput: 154.0 tokens/s, Avg generation throughput: 63.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 15.2%, Prefix cache hit rate: 76.2%
+INFO:     127.0.0.1:52064 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52074 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52076 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52090 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52126 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52140 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48068 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:27 [loggers.py:320] Engine 000: Avg prompt throughput: 33.4 tokens/s, Avg generation throughput: 70.3 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 13.5%, Prefix cache hit rate: 77.0%
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48080 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48094 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48098 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48108 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48124 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48130 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48144 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48158 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48174 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59308 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:37 [loggers.py:320] Engine 000: Avg prompt throughput: 199.2 tokens/s, Avg generation throughput: 56.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 18.6%, Prefix cache hit rate: 76.1%
+INFO:     127.0.0.1:59318 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59322 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59336 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59342 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59358 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59372 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59378 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59394 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59396 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44258 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:47 [loggers.py:320] Engine 000: Avg prompt throughput: 31.2 tokens/s, Avg generation throughput: 63.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 20.7%, Prefix cache hit rate: 76.1%
+INFO:     127.0.0.1:44262 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44270 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44278 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44284 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44294 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44310 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44324 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44336 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44338 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34860 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:03:57 [loggers.py:320] Engine 000: Avg prompt throughput: 80.5 tokens/s, Avg generation throughput: 58.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.3%, Prefix cache hit rate: 75.7%
+INFO:     127.0.0.1:34866 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34874 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34886 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34900 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34914 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34924 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34940 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38824 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:07 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 54.1 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 30.3%, Prefix cache hit rate: 73.2%
+INFO:     127.0.0.1:38840 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38854 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38870 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38872 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38874 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38876 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38892 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51874 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51890 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:17 [loggers.py:320] Engine 000: Avg prompt throughput: 337.9 tokens/s, Avg generation throughput: 41.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 35.4%, Prefix cache hit rate: 72.3%
+INFO:     127.0.0.1:51896 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51912 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51916 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51924 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51932 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51954 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43624 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43640 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:27 [loggers.py:320] Engine 000: Avg prompt throughput: 22.5 tokens/s, Avg generation throughput: 48.5 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 36.8%, Prefix cache hit rate: 72.8%
+INFO:     127.0.0.1:43654 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43662 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43664 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43670 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43686 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43698 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43706 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43716 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37906 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37908 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:37 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 49.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 38.5%, Prefix cache hit rate: 72.8%
+INFO:     127.0.0.1:37910 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37920 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37938 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37946 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37974 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33696 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33704 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:47 [loggers.py:320] Engine 000: Avg prompt throughput: 142.0 tokens/s, Avg generation throughput: 40.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 43.3%, Prefix cache hit rate: 71.5%
+INFO:     127.0.0.1:33714 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33730 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33734 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33750 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33760 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33778 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33790 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51866 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:04:57 [loggers.py:320] Engine 000: Avg prompt throughput: 147.4 tokens/s, Avg generation throughput: 42.1 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.5%, Prefix cache hit rate: 70.9%
+INFO:     127.0.0.1:51870 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51884 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51886 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51896 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51900 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51908 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51918 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51944 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48250 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:07 [loggers.py:320] Engine 000: Avg prompt throughput: 38.6 tokens/s, Avg generation throughput: 45.0 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 44.7%, Prefix cache hit rate: 71.1%
+INFO:     127.0.0.1:48258 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48274 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48278 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48284 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48298 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48300 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48316 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48324 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48334 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50976 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:17 [loggers.py:320] Engine 000: Avg prompt throughput: 118.4 tokens/s, Avg generation throughput: 40.5 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 50.3%, Prefix cache hit rate: 71.3%
+INFO:     127.0.0.1:50982 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50992 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51004 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51034 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51038 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51046 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58112 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:27 [loggers.py:320] Engine 000: Avg prompt throughput: 22.6 tokens/s, Avg generation throughput: 44.3 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 51.3%, Prefix cache hit rate: 72.4%
+INFO:     127.0.0.1:58120 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58122 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58138 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58146 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58148 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58156 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58158 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58164 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58178 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33966 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:37 [loggers.py:320] Engine 000: Avg prompt throughput: 81.3 tokens/s, Avg generation throughput: 41.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 55.0%, Prefix cache hit rate: 72.3%
+INFO:     127.0.0.1:33978 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33980 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33986 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33998 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34014 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34016 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34024 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34028 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33718 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:47 [loggers.py:320] Engine 000: Avg prompt throughput: 95.1 tokens/s, Avg generation throughput: 39.3 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 56.8%, Prefix cache hit rate: 73.0%
+INFO:     127.0.0.1:33730 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33746 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33762 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33766 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33776 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33780 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33782 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33786 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48916 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48928 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:05:57 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.2%, Prefix cache hit rate: 73.0%
+INFO:     127.0.0.1:48942 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48958 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48972 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49000 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49006 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49008 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59184 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59190 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:07 [loggers.py:320] Engine 000: Avg prompt throughput: 53.2 tokens/s, Avg generation throughput: 39.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 60.4%, Prefix cache hit rate: 73.2%
+INFO:     127.0.0.1:59196 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59210 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59212 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59216 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59226 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59230 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59232 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59244 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32782 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:17 [loggers.py:320] Engine 000: Avg prompt throughput: 105.0 tokens/s, Avg generation throughput: 34.9 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 56.3%, Prefix cache hit rate: 75.2%
+INFO:     127.0.0.1:32788 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32798 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32804 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32814 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32830 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32836 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32850 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32854 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35832 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35844 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:27 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 39.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 57.4%, Prefix cache hit rate: 75.5%
+INFO:     127.0.0.1:35854 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35862 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35874 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35900 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35902 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35904 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35914 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45072 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:37 [loggers.py:320] Engine 000: Avg prompt throughput: 43.5 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.7%, Prefix cache hit rate: 75.5%
+INFO:     127.0.0.1:45078 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45086 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45100 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45114 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45122 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45134 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45138 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45142 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45152 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56746 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:47 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 60.0%, Prefix cache hit rate: 75.5%
+INFO:     127.0.0.1:56758 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56788 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56794 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56806 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56808 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56812 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56818 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50722 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:06:57 [loggers.py:320] Engine 000: Avg prompt throughput: 335.6 tokens/s, Avg generation throughput: 25.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 69.1%, Prefix cache hit rate: 74.6%
+INFO:     127.0.0.1:50724 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50738 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50740 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50756 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50764 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50782 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50784 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50796 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49468 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:07 [loggers.py:320] Engine 000: Avg prompt throughput: 41.5 tokens/s, Avg generation throughput: 35.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 69.5%, Prefix cache hit rate: 75.4%
+INFO:     127.0.0.1:49484 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49490 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49496 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49512 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49516 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49524 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49536 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49540 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49542 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51042 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:17 [loggers.py:320] Engine 000: Avg prompt throughput: 3.8 tokens/s, Avg generation throughput: 41.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 59.9%, Prefix cache hit rate: 75.5%
+INFO:     127.0.0.1:51054 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51072 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51078 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51086 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51094 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51108 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51118 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51126 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34756 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:27 [loggers.py:320] Engine 000: Avg prompt throughput: 34.7 tokens/s, Avg generation throughput: 39.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 56.4%, Prefix cache hit rate: 75.2%
+INFO:     127.0.0.1:34764 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34770 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34776 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34788 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34804 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34820 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34828 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34836 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34850 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48750 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:37 [loggers.py:320] Engine 000: Avg prompt throughput: 137.3 tokens/s, Avg generation throughput: 38.4 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 39.4%, Prefix cache hit rate: 75.7%
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48754 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48756 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48764 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48770 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48790 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48798 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48802 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42548 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:47 [loggers.py:320] Engine 000: Avg prompt throughput: 92.3 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 40.5%, Prefix cache hit rate: 76.8%
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42550 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42566 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42578 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42588 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42602 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42606 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42614 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42630 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35808 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35822 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:07:57 [loggers.py:320] Engine 000: Avg prompt throughput: 167.1 tokens/s, Avg generation throughput: 38.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.1%, Prefix cache hit rate: 76.6%
+INFO:     127.0.0.1:35834 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35840 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35846 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35852 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35868 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35878 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35886 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35894 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48894 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48908 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:07 [loggers.py:320] Engine 000: Avg prompt throughput: 20.4 tokens/s, Avg generation throughput: 44.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 43.4%, Prefix cache hit rate: 77.1%
+INFO:     127.0.0.1:48918 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48930 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48940 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48942 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48952 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57902 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:17 [loggers.py:320] Engine 000: Avg prompt throughput: 66.2 tokens/s, Avg generation throughput: 41.1 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 44.6%, Prefix cache hit rate: 77.3%
+INFO:     127.0.0.1:57912 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57930 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57936 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57952 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57958 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57972 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44228 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:27 [loggers.py:320] Engine 000: Avg prompt throughput: 37.9 tokens/s, Avg generation throughput: 43.7 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.4%, Prefix cache hit rate: 77.3%
+INFO:     127.0.0.1:44236 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44248 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44254 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44258 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44268 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44284 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44288 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44294 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44300 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37280 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:37 [loggers.py:320] Engine 000: Avg prompt throughput: 25.7 tokens/s, Avg generation throughput: 46.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 37.0%, Prefix cache hit rate: 77.7%
+INFO:     127.0.0.1:37288 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37294 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37306 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37314 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37318 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37332 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37334 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37338 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37346 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46154 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:47 [loggers.py:320] Engine 000: Avg prompt throughput: 73.0 tokens/s, Avg generation throughput: 45.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 39.0%, Prefix cache hit rate: 78.0%
+INFO:     127.0.0.1:46156 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46164 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46180 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46194 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46198 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46204 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46218 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46232 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58156 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:08:57 [loggers.py:320] Engine 000: Avg prompt throughput: 113.9 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 42.5%, Prefix cache hit rate: 77.8%
+INFO:     127.0.0.1:58170 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58176 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58194 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58204 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58212 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58218 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58228 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58240 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44016 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:07 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 46.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 44.0%, Prefix cache hit rate: 77.8%
+INFO:     127.0.0.1:44028 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44032 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44048 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44052 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44058 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44062 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44064 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44072 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44082 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58442 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:17 [loggers.py:320] Engine 000: Avg prompt throughput: 83.8 tokens/s, Avg generation throughput: 41.7 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.9%, Prefix cache hit rate: 78.0%
+INFO:     127.0.0.1:58444 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58458 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58474 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58486 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58498 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58504 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58512 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58516 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46684 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46690 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:27 [loggers.py:320] Engine 000: Avg prompt throughput: 195.8 tokens/s, Avg generation throughput: 35.9 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 52.4%, Prefix cache hit rate: 77.4%
+INFO:     127.0.0.1:46700 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46708 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46712 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46728 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46736 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46752 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46760 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46768 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47940 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47944 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:37 [loggers.py:320] Engine 000: Avg prompt throughput: 136.8 tokens/s, Avg generation throughput: 35.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 55.9%, Prefix cache hit rate: 77.6%
+INFO:     127.0.0.1:47948 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47984 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47994 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48008 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48014 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58582 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58592 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:47 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 57.3%, Prefix cache hit rate: 77.6%
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58596 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58598 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58600 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58604 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58606 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58620 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40916 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:09:57 [loggers.py:320] Engine 000: Avg prompt throughput: 57.9 tokens/s, Avg generation throughput: 38.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 56.4%, Prefix cache hit rate: 77.7%
+INFO:     127.0.0.1:40920 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40932 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40944 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40950 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40966 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40982 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40994 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41000 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54362 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:07 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.5 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 54.7%, Prefix cache hit rate: 77.7%
+INFO:     127.0.0.1:54374 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54390 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54402 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54414 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54424 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54428 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54442 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54444 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54448 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46332 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:17 [loggers.py:320] Engine 000: Avg prompt throughput: 56.6 tokens/s, Avg generation throughput: 38.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 50.3%, Prefix cache hit rate: 78.0%
+INFO:     127.0.0.1:46344 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46352 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46360 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46364 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46380 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46408 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46416 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46422 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57666 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:27 [loggers.py:320] Engine 000: Avg prompt throughput: 31.4 tokens/s, Avg generation throughput: 40.9 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 51.9%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:57674 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57684 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57690 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57702 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57716 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57728 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57734 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57744 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57756 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35806 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:37 [loggers.py:320] Engine 000: Avg prompt throughput: 21.6 tokens/s, Avg generation throughput: 42.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 53.1%, Prefix cache hit rate: 78.5%
+INFO:     127.0.0.1:35820 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35832 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35840 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35846 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35856 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35870 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35874 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35892 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42312 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:47 [loggers.py:320] Engine 000: Avg prompt throughput: 122.8 tokens/s, Avg generation throughput: 34.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 57.2%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:42326 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42342 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42358 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42368 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42374 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42376 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42400 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39622 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39624 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:10:57 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.4%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:39628 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39640 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39654 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39664 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39672 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39686 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39696 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39706 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48556 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48568 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:07 [loggers.py:320] Engine 000: Avg prompt throughput: 3.8 tokens/s, Avg generation throughput: 32.2 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.1%, Prefix cache hit rate: 77.5%
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48584 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48594 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48610 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48626 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48636 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48648 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48660 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48672 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45212 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45220 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:17 [loggers.py:320] Engine 000: Avg prompt throughput: 334.5 tokens/s, Avg generation throughput: 30.5 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 44.8%, Prefix cache hit rate: 77.8%
+INFO:     127.0.0.1:45224 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45230 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45234 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45236 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45244 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45260 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45270 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45284 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60384 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:27 [loggers.py:320] Engine 000: Avg prompt throughput: 153.0 tokens/s, Avg generation throughput: 33.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 61.8%, Prefix cache hit rate: 77.8%
+INFO:     127.0.0.1:60392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60396 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60408 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60422 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60428 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60432 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60448 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60464 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60476 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39732 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:37 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 39.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 62.9%, Prefix cache hit rate: 77.8%
+INFO:     127.0.0.1:39746 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39758 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39760 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39782 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39790 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39800 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39810 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39812 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35894 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:47 [loggers.py:320] Engine 000: Avg prompt throughput: 79.5 tokens/s, Avg generation throughput: 36.5 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 64.2%, Prefix cache hit rate: 77.9%
+INFO:     127.0.0.1:35898 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35912 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35928 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35940 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35952 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35966 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35982 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35986 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38954 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:11:57 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 39.2 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 65.5%, Prefix cache hit rate: 77.9%
+INFO:     127.0.0.1:38962 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38974 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38984 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38994 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39006 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39036 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39042 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39058 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55788 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:07 [loggers.py:320] Engine 000: Avg prompt throughput: 34.4 tokens/s, Avg generation throughput: 35.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 67.0%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:55792 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55804 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55816 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55818 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55824 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55840 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55850 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55864 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45848 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45850 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:17 [loggers.py:320] Engine 000: Avg prompt throughput: 172.8 tokens/s, Avg generation throughput: 29.7 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 70.6%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:45866 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45878 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45890 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45902 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45912 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45916 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45928 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45930 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47654 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47658 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:27 [loggers.py:320] Engine 000: Avg prompt throughput: 136.2 tokens/s, Avg generation throughput: 31.0 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 75.3%, Prefix cache hit rate: 78.1%
+INFO:     127.0.0.1:47668 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47672 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47684 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47686 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47688 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47704 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47710 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47718 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45934 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45942 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:37 [loggers.py:320] Engine 000: Avg prompt throughput: 2.9 tokens/s, Avg generation throughput: 35.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 67.5%, Prefix cache hit rate: 78.1%
+INFO:     127.0.0.1:45956 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45964 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45980 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45986 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45988 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45990 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45998 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38014 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:47 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 38.4 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 68.8%, Prefix cache hit rate: 78.1%
+INFO:     127.0.0.1:38016 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38024 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38036 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38050 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38052 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38060 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38062 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38070 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39466 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:12:57 [loggers.py:320] Engine 000: Avg prompt throughput: 26.3 tokens/s, Avg generation throughput: 36.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 69.8%, Prefix cache hit rate: 78.2%
+INFO:     127.0.0.1:39482 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39486 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39494 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39510 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39514 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39526 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39540 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39542 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39554 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41678 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:07 [loggers.py:320] Engine 000: Avg prompt throughput: 69.7 tokens/s, Avg generation throughput: 35.6 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.1%, Prefix cache hit rate: 78.3%
+INFO:     127.0.0.1:41682 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41698 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41714 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41722 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41734 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41740 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41750 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41754 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41768 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34904 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:17 [loggers.py:320] Engine 000: Avg prompt throughput: 25.9 tokens/s, Avg generation throughput: 38.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 58.5%, Prefix cache hit rate: 78.6%
+INFO:     127.0.0.1:34910 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34936 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34938 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34950 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34964 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34970 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34984 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52176 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:27 [loggers.py:320] Engine 000: Avg prompt throughput: 3.8 tokens/s, Avg generation throughput: 31.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 45.8%, Prefix cache hit rate: 78.7%
+INFO:     127.0.0.1:52178 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52188 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52192 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52206 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52220 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52230 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35964 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52244 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52260 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59512 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59522 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:37 [loggers.py:320] Engine 000: Avg prompt throughput: 35.4 tokens/s, Avg generation throughput: 35.3 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.6%, Prefix cache hit rate: 78.7%
+INFO:     127.0.0.1:59536 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59552 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59566 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59580 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59592 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59608 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59618 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59624 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42442 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42454 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:47 [loggers.py:320] Engine 000: Avg prompt throughput: 20.3 tokens/s, Avg generation throughput: 32.0 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 47.3%, Prefix cache hit rate: 78.7%
+INFO:     127.0.0.1:42460 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42474 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42484 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42498 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42512 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42516 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42526 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43238 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43244 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:13:57 [loggers.py:320] Engine 000: Avg prompt throughput: 74.7 tokens/s, Avg generation throughput: 30.7 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 49.1%, Prefix cache hit rate: 78.7%
+INFO:     127.0.0.1:43250 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43252 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43266 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43268 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43276 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43290 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43294 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43300 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54108 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54122 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:07 [loggers.py:320] Engine 000: Avg prompt throughput: 48.4 tokens/s, Avg generation throughput: 31.9 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 51.3%, Prefix cache hit rate: 78.8%
+INFO:     127.0.0.1:54132 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54156 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54170 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54182 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54190 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54204 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46882 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:17 [loggers.py:320] Engine 000: Avg prompt throughput: 62.8 tokens/s, Avg generation throughput: 32.9 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 52.4%, Prefix cache hit rate: 78.8%
+INFO:     127.0.0.1:46890 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46898 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46914 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46916 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46920 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46936 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46944 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46950 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44804 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:27 [loggers.py:320] Engine 000: Avg prompt throughput: 228.4 tokens/s, Avg generation throughput: 75.4 tokens/s, Running: 7 reqs, Waiting: 0 reqs, GPU KV cache usage: 61.3%, Prefix cache hit rate: 78.5%
+INFO:     127.0.0.1:44818 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44830 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44834 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44850 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44864 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44870 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44884 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44888 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44902 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43124 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:37 [loggers.py:320] Engine 000: Avg prompt throughput: 77.0 tokens/s, Avg generation throughput: 90.0 tokens/s, Running: 5 reqs, Waiting: 0 reqs, GPU KV cache usage: 39.2%, Prefix cache hit rate: 78.5%
+INFO:     127.0.0.1:43132 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43140 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43152 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43164 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43180 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43194 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43210 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57428 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43226 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43238 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52676 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:47 [loggers.py:320] Engine 000: Avg prompt throughput: 243.4 tokens/s, Avg generation throughput: 70.8 tokens/s, Running: 5 reqs, Waiting: 0 reqs, GPU KV cache usage: 46.1%, Prefix cache hit rate: 78.7%
+INFO:     127.0.0.1:52690 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52716 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52728 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52730 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52740 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52752 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52764 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52770 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47286 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:14:57 [loggers.py:320] Engine 000: Avg prompt throughput: 166.1 tokens/s, Avg generation throughput: 73.2 tokens/s, Running: 5 reqs, Waiting: 0 reqs, GPU KV cache usage: 52.4%, Prefix cache hit rate: 78.4%
+INFO:     127.0.0.1:47302 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47316 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47320 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47328 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47330 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47332 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47346 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47348 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52682 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52690 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:07 [loggers.py:320] Engine 000: Avg prompt throughput: 16.9 tokens/s, Avg generation throughput: 67.5 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 45.6%, Prefix cache hit rate: 78.5%
+INFO:     127.0.0.1:52696 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52706 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52710 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52716 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52726 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35980 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52732 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52736 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52748 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40400 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40410 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:17 [loggers.py:320] Engine 000: Avg prompt throughput: 49.4 tokens/s, Avg generation throughput: 60.0 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 45.1%, Prefix cache hit rate: 79.2%
+INFO:     127.0.0.1:40420 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40434 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40436 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40448 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40450 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40458 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40468 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40482 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43016 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43026 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:27 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 64.9 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 39.7%, Prefix cache hit rate: 79.2%
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43040 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43044 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43060 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43066 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43076 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43078 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43094 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43100 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53908 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53912 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:37 [loggers.py:320] Engine 000: Avg prompt throughput: 64.5 tokens/s, Avg generation throughput: 57.7 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 39.4%, Prefix cache hit rate: 79.2%
+INFO:     127.0.0.1:53922 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53926 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53940 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53946 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53960 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53964 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53980 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53984 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40286 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:47 [loggers.py:320] Engine 000: Avg prompt throughput: 389.8 tokens/s, Avg generation throughput: 44.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 49.5%, Prefix cache hit rate: 79.0%
+INFO:     127.0.0.1:40302 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40312 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40326 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40330 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40344 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40360 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40372 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40386 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40388 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43328 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:15:57 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 55.8 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 51.4%, Prefix cache hit rate: 79.0%
+INFO:     127.0.0.1:43344 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43356 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43368 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43372 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43380 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43392 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43396 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43400 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43412 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43658 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:07 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.3 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 54.6%, Prefix cache hit rate: 79.2%
+INFO:     127.0.0.1:43662 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43678 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43688 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43696 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43712 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43716 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43722 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43732 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43748 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57656 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:17 [loggers.py:320] Engine 000: Avg prompt throughput: 124.9 tokens/s, Avg generation throughput: 32.0 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 55.2%, Prefix cache hit rate: 79.4%
+INFO:     127.0.0.1:57672 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57676 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57690 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57704 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57720 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57724 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57730 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57740 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57750 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56778 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:27 [loggers.py:320] Engine 000: Avg prompt throughput: 17.0 tokens/s, Avg generation throughput: 31.7 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 55.2%, Prefix cache hit rate: 79.6%
+INFO:     127.0.0.1:56792 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56800 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56808 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35934 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:56818 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56832 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56838 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56850 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56864 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56868 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40186 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:37 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 26.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 13.7%, Prefix cache hit rate: 79.6%
+INFO:     127.0.0.1:40188 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40190 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40204 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40208 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40212 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35950 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40220 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40232 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40242 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51648 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51660 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:47 [loggers.py:320] Engine 000: Avg prompt throughput: 95.9 tokens/s, Avg generation throughput: 28.1 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 34.4%, Prefix cache hit rate: 80.0%
+INFO:     127.0.0.1:51668 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51682 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51686 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51698 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51706 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51718 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51728 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51742 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54968 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54982 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:16:57 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 30.8 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 35.5%, Prefix cache hit rate: 80.0%
+INFO:     127.0.0.1:54996 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55000 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55012 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55020 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55034 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55040 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55046 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55052 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46054 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46056 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:17:07 [loggers.py:320] Engine 000: Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 23.9 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 80.0%
+INFO:     127.0.0.1:46068 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46084 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46086 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46096 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46112 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46122 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46124 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46128 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50760 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:17:17 [loggers.py:320] Engine 000: Avg prompt throughput: 23.5 tokens/s, Avg generation throughput: 20.8 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 80.3%
+INFO:     127.0.0.1:50774 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35930 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50788 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50792 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50804 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50818 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50830 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50832 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50846 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53908 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:17:27 [loggers.py:320] Engine 000: Avg prompt throughput: 16.8 tokens/s, Avg generation throughput: 23.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 23.7%, Prefix cache hit rate: 80.6%
+INFO:     127.0.0.1:53920 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53930 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53936 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53950 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=25103) INFO 11-10 22:17:31 [launcher.py:128] [shutdown] API server: shutdown triggered
+(APIServer pid=25103) INFO 11-10 22:17:31 [launcher.py:144] [shutdown] API server: stopping engine client mode=abort timeout=0s
+(APIServer pid=25103) INFO 11-10 22:17:31 [core_client.py:762] [shutdown] MPClient: start timeout=0s
+(APIServer pid=25103) INFO 11-10 22:17:31 [core_client.py:764] [shutdown] MPClient: stopping engine manager
+(APIServer pid=25103) INFO 11-10 22:17:31 [utils.py:638] [shutdown] Process manager: send sigterm to process EngineCore
+(APIServer pid=25103) WARNING 11-10 22:17:31 [utils.py:658] [shutdown] Process manager: force killing remaining processes count=1
+(APIServer pid=25103) WARNING 11-10 22:17:31 [utils.py:663] [shutdown] Process manager: force killing remaining process EngineCore pid 25238
+(EngineCore pid=25238) INFO 11-10 22:17:31 [core.py:1409] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=25238) INFO 11-10 22:17:31 [core.py:1558] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=25238) INFO 11-10 22:17:31 [core.py:1589] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=25238) INFO 11-10 22:17:31 [core.py:1422] [shutdown] EngineCore: exiting busy loop
+(APIServer pid=25103) INFO 11-10 22:17:31 [core_client.py:766] [shutdown] MPClient: engine manager stopped
+(APIServer pid=25103) INFO 11-10 22:17:31 [core_client.py:767] [shutdown] MPClient: cleaning up background resources
+(APIServer pid=25103) INFO 11-10 22:17:31 [core_client.py:769] [shutdown] MPClient: complete
+(APIServer pid=25103) INFO 11-10 22:17:31 [launcher.py:153] [shutdown] API server: engine client stopped
+(APIServer pid=25103) INFO 11-10 22:17:31 [launcher.py:156] [shutdown] API server: signalling HTTP server shutdown
+(APIServer pid=25103) INFO 11-10 22:17:31 [launcher.py:178] [shutdown] API server: shutting down FastAPI HTTP server
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+/home/alis/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

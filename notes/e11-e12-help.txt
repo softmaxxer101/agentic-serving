@@ -1,0 +1,4 @@
+Launch a local OpenAI-compatible API server to serve LLM
+--help=ModelConfig, --help=Frontend)
+  Frontend                Arguments for the OpenAI-compatible frontend server.
+  SchedulerConfig         Scheduler configuration.

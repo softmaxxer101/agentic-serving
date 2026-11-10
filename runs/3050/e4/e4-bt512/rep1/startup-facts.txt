@@ -1,0 +1,3 @@
+(APIServer pid=16539) INFO 11-10 21:27:40 [scheduler.py:308] Chunked prefill is enabled with max_num_batched_tokens=512.
+(EngineCore pid=16680) INFO 11-10 21:28:09 [model_runner.py:407] Model loading took 1.12 GiB memory and 13.083177 seconds
+(EngineCore pid=16680) INFO 11-10 21:28:14 [kv_cache_utils.py:2464] GPU KV cache size: 30,240 tokens, Maximum concurrency for 8,192 tokens per request: 3.69x

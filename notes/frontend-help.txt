@@ -1,0 +1,143 @@
+Frontend:
+  Arguments for the OpenAI-compatible frontend server.
+
+  --allow-credentials, --no-allow-credentials
+                        Allow credentials. (default: False)
+  --allowed-headers ALLOWED_HEADERS
+                        Allowed headers. (default: ['*'])
+  --allowed-methods ALLOWED_METHODS
+                        Allowed methods. (default: ['*'])
+  --allowed-origins ALLOWED_ORIGINS
+                        Allowed origins. (default: ['*'])
+  --anthropic-disabled-thinking-effort {auto,high,low,max,medium,none,xhigh}
+  --api-key API_KEY [API_KEY ...]
+                        If provided, the server will require one of these keys
+                        to be presented in the header.
+                        Warning: this only authenticates endpoints under the
+                        `/v1`, `/v2`, and `/inference` path prefixes. Other
+                        endpoints on the same server, including `/invocations`
+                        (which exposes the same inference capabilities as
+                        `/v1`), remain unauthenticated. Do not rely on `--api-
+                        key` alone to secure vLLM; see https://docs.vllm.ai/en
+                        /latest/usage/security.html#api-key-authentication-
+                        limitations for what it does and does not protect.
+                        (default: None)
+  --chat-template CHAT_TEMPLATE
+  --chat-template-content-format {auto,openai,string}
+  --cohere-format COHERE_FORMAT
+  --cohere-is-reasoning-model, --no-cohere-is-reasoning-model
+  --data-parallel-supervisor-port DATA_PARALLEL_SUPERVISOR_PORT
+                        HTTP port for aggregated health endpoints in multi-
+                        port external LB mode. (default: 9256)
+  --default-chat-template-kwargs DEFAULT_CHAT_TEMPLATE_KWARGS
+                        Should either be a valid JSON string or JSON keys
+                        passed individually. (default: None)
+  --disable-access-log-for-endpoints DISABLE_ACCESS_LOG_FOR_ENDPOINTS
+                        Comma-separated list of endpoint paths to exclude from
+                        uvicorn access logs. This is useful to reduce log
+                        noise from high-frequency endpoints like health
+                        checks. Example: "/health,/metrics,/ping". When set,
+                        access logs for requests to these paths will be
+                        suppressed while keeping logs for other endpoints.
+                        (default: None)
+  --disable-fastapi-docs, --no-disable-fastapi-docs
+                        Disable FastAPI's OpenAPI schema, Swagger UI, and
+                        ReDoc endpoint. (default: False)
+  --disable-uvicorn-access-log, --no-disable-uvicorn-access-log
+                        Disable uvicorn access log. (default: False)
+  --dp-supervisor-probe-failure-threshold DP_SUPERVISOR_PROBE_FAILURE_THRESHOLD
+                        Number of consecutive connection-error retries before
+                        a child health probe is declared failed in multi-port
+                        external LB mode. (default: 3)
+  --dp-supervisor-probe-interval-s DP_SUPERVISOR_PROBE_INTERVAL_S
+                        Seconds between aggregated health probes in multi-port
+                        external LB mode. (default: 5.0)
+  --dp-supervisor-probe-timeout-s DP_SUPERVISOR_PROBE_TIMEOUT_S
+                        Seconds to wait between retries when a child health
+                        probe fails with a connection error in multi-port
+                        external LB mode. (default: 5.0)
+  --enable-auto-tool-choice, --no-enable-auto-tool-choice
+  --enable-flash-late-interaction, --no-enable-flash-late-interaction
+                        If set, run pooling score MaxSim on GPU in the API
+                        server process. Can significantly improve late-
+                        interaction scoring performance. (default: True)
+  --enable-force-include-usage, --no-enable-force-include-usage
+  --enable-log-deltas, --no-enable-log-deltas
+  --enable-log-outputs, --no-enable-log-outputs
+  --enable-offline-docs, --no-enable-offline-docs
+                        Enable offline FastAPI documentation for air-gapped
+                        environments. Uses vendored static assets bundled with
+                        vLLM. (default: False)
+  --enable-per-request-metrics, --no-enable-per-request-metrics
+  --enable-prompt-tokens-details, --no-enable-prompt-tokens-details
+  --enable-request-id-headers, --no-enable-request-id-headers
+                        If specified, API server will add X-Request-Id header
+                        to responses. (default: False)
+  --enable-scale-out, --no-enable-scale-out
+  --enable-server-load-tracking, --no-enable-server-load-tracking
+  --enable-ssl-refresh, --no-enable-ssl-refresh
+                        Refresh SSL Context when SSL certificate files change
+                        (default: False)
+  --enable-tokenizer-info-endpoint, --no-enable-tokenizer-info-endpoint
+  --exclude-tools-when-tool-choice-none, --no-exclude-tools-when-tool-choice-none
+  --fingerprint-mode {custom,full,hash,none}
+  --fingerprint-value FINGERPRINT_VALUE
+  --h11-max-header-count H11_MAX_HEADER_COUNT
+                        Maximum number of HTTP headers allowed in a request
+                        for h11 parser. Helps mitigate header abuse. Default:
+                        256. (default: 256)
+  --h11-max-incomplete-event-size H11_MAX_INCOMPLETE_EVENT_SIZE
+                        Maximum size (bytes) of an incomplete HTTP event
+                        (header or body) for h11 parser. Helps mitigate header
+                        abuse. Default: 4194304 (4 MB). (default: 4194304)
+  --host HOST           Host name. (default: None)
+  --log-error-stack, --no-log-error-stack
+  --lora-modules LORA_MODULES [LORA_MODULES ...]
+  --max-log-len MAX_LOG_LEN
+  --middleware MIDDLEWARE
+                        Additional ASGI middleware to apply to the app. We
+                        accept multiple
+                        --middleware arguments. The value should be an import
+                        path. If a function is provided, vLLM will add it to
+                        the server using `@app.middleware('http')`. If a class
+                        is provided, vLLM will add it to the server using
+                        `app.add_middleware()`. (default: [])
+  --port PORT           Port number. (default: 8000)
+  --response-role RESPONSE_ROLE
+  --return-tokens-as-token-ids, --no-return-tokens-as-token-ids
+  --root-path ROOT_PATH
+                        FastAPI root_path when app is behind a path based
+                        routing proxy. (default: None)
+  --sse-keep-alive-interval SSE_KEEP_ALIVE_INTERVAL
+  --ssl-ca-certs SSL_CA_CERTS
+                        The CA certificates file. (default: None)
+  --ssl-cert-reqs SSL_CERT_REQS
+                        Whether client certificate is required (see stdlib ssl
+                        module's). (default: 0)
+  --ssl-certfile SSL_CERTFILE
+                        The file path to the SSL cert file. (default: None)
+  --ssl-ciphers SSL_CIPHERS
+                        SSL cipher suites for HTTPS (TLS 1.2 and below only).
+                        Example: 'ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-
+                        CHACHA20-POLY1305' (default: None)
+  --ssl-keyfile SSL_KEYFILE
+                        The file path to the SSL key file. (default: None)
+  --tokens-only, --no-tokens-only
+  --tool-call-parser {apertus,cohere_command3,cohere_command4,deepseek_v3,deepseek_v31,deepseek_v32,deepseek_v4,deepseek_v41,dots,ernie45,functiongemma,gemma4,gigachat3,glm45,glm47,granite,granite-20b-fc,granite4,hermes,hunyuan_a13b,hy_v3,hy_v4,inkling,internlm,jamba,k2_horizon,kimi_k2,kimi_k3,lfm2,ling3,llama3_json,llama4_json,llama4_pythonic,longcat,mimo,minicpm5,minimax_m2,minimax_m3,mistral,muse_glimmer,olmo3,openai,phi4_mini_json,poolside_v1,pythonic,qwen3_coder,qwen3_xml,seed_oss,step3,step3p5,xlam} or name registered in --tool-parser-plugin
+  --tool-parser-plugin TOOL_PARSER_PLUGIN
+  --tool-server TOOL_SERVER
+  --tool-strict-level {auto,function,parameter}
+  --trust-request-chat-template, --no-trust-request-chat-template
+  --trust-request-mm-kwargs, --no-trust-request-mm-kwargs
+  --uds UDS             Unix domain socket path. If set, host and port
+                        arguments are ignored. (default: None)
+  --uvicorn-log-level {critical,debug,error,info,trace,warning}
+                        Log level for uvicorn. (default: info)
+
+When passing JSON CLI arguments, the following sets of arguments are equivalent:
+   --json-arg '{"key1": "value1", "key2": {"key3": "value2"}}'
+   --json-arg.key1 value1 --json-arg.key2.key3 value2
+
+Additionally, list elements can be passed individually using +:
+   --json-arg '{"key4": ["value3", "value4", "value5"]}'
+   --json-arg.key4+ value3 --json-arg.key4+='value4,value5'

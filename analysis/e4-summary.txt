@@ -1,0 +1,3 @@
+ run  sessions  requests  errors  dur_s  ttft_p50  ttft_p99  itl_p50  itl_p95  e2e_p50  e2e_p99  sess_p50  sess_p99  out_tok_s  in_tok_s  json_ok  cached_frac  truncated
+rep1        10        45       0  630.1     0.644     3.039    0.080    0.106   20.916   55.029    68.669   277.316     17.161   144.624      1.0         0.79      0.133
+rep1        10        45       0  599.8     0.664     2.430    0.085    0.098   20.954   49.123    65.184   315.675     18.120   151.916      1.0         0.79      0.089

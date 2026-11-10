@@ -1,0 +1,5 @@
+usage: run.py [-h] --trace TRACE [--mode {replay,live}] [--load {open,closed}]
+              [--rate RATE] [--conc CONC] [--n N] [--warmup WARMUP]
+              [--max-tokens MAX_TOKENS] [--base-url BASE_URL]
+              [--api-key API_KEY] [--model MODEL] --out OUT
+run.py: error: unrecognized arguments: --think on

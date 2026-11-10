@@ -1,0 +1,41 @@
+usage: vllm serve [model_tag] [options]
+
+Launch a local OpenAI-compatible API server to serve LLM
+completions via HTTP. Defaults to Qwen/Qwen3-0.6B if no model is specified.
+
+Search by using: `--help=<ConfigGroup>` to explore options by section (e.g.,
+--help=ModelConfig, --help=Frontend)
+  Use `--help=all` to show all available flags at once.
+
+Config Groups:
+  positional arguments
+  options
+  Frontend                Arguments for the OpenAI-compatible frontend server.
+  ModelConfig             Configuration for the model.
+  LoadConfig              Configuration for loading the model weights.
+  AttentionConfig         Configuration for attention mechanisms in vLLM.
+  MambaConfig             Configuration for Mamba SSM backends.
+  StructuredOutputsConfig Dataclass which contains structured outputs config
+                          for the engine.
+  ParallelConfig          Configuration for the distributed execution.
+  CacheConfig             Configuration for the KV cache.
+  OffloadConfig           Configuration for model weight offloading to reduce
+                          GPU memory usage.
+  MultiModalConfig        Controls the behavior of multimodal models.
+  LoRAConfig              Configuration for LoRA.
+  LoggingConfig           vLLM logging. Default ``dictConfig`` adds a
+                          formatted stream handler.
+  ObservabilityConfig     Configuration for observability - metrics and
+                          tracing.
+  SchedulerConfig         Scheduler configuration.
+  CompilationConfig       Configuration for compilation.
+  KernelConfig            Configuration for kernel selection and warmup
+                          behavior.
+  VllmConfig              Dataclass which contains all vllm-related
+                          configuration. This simplifies passing around the
+                          distinct configurations in the codebase.
+
+For full list:            vllm serve --help=all
+For a section:            vllm serve --help=ModelConfig    (case-insensitive)
+For a flag:               vllm serve --help=max-model-len  (_ or - accepted)
+Documentation:            https://docs.vllm.ai
