@@ -1,0 +1,14 @@
+[[32m[1minfo     [0m] [1mstarting benchmark            [0m [36mconcurrency[0m=[35m32[0m [36mduration[0m=[35m60.0[0m [36mmodel[0m=[35mQwen/Qwen3-0.6B[0m [36mnum_gpus[0m=[35mNone[0m [36mworkload_templates[0m=[35m2[0m
+[[33m[1mwarning  [0m] [1mrequest failed                [0m [36merror[0m=[35m'Error code: 400 - {\'error\': {\'message\': "This model\'s maximum context length is 4096 tokens. However, your prompt contains at least 4097 input tokens, which exceeds this limit even without any output tokens. Please reduce the length of the input prompt. (parameter=input_tokens, value=4097)", \'type\': \'BadRequestError\', \'param\': \'input_tokens\', \'code\': 400}}'[0m [36mturn[0m=[35m6[0m
+[[32m[1minfo     [0m] [1mbenchmark complete            [0m [36mcached_prompt_tok_per_s[0m=[35m1106.1611515633792[0m [36mcompleted_requests[0m=[35m0[0m [36mcompletion_tok_per_s[0m=[35m59.926638576584644[0m [36mfailed_requests[0m=[35m1[0m [36mlast_30s_window_cached_prompt_tok_per_s[0m=[35m1607.7355840950174[0m [36mlast_30s_window_completion_tok_per_s[0m=[35m55.95367462047625[0m [36mlast_30s_window_new_prompt_tok_per_s[0m=[35m197.70298365901607[0m [36mlast_30s_window_prompt_tok_per_s[0m=[35m1805.4385677540336[0m [36mnew_prompt_tok_per_s[0m=[35m325.37890908902017[0m [36mprompt_tok_per_s[0m=[35m1431.5400606523995[0m [36msteady_state_cached_prompt_tok_per_s[0m=[35m1289.6027248991484[0m [36msteady_state_completion_tok_per_s[0m=[35m56.23715586477768[0m [36msteady_state_new_prompt_tok_per_s[0m=[35m232.89886247999434[0m [36msteady_state_prompt_tok_per_s[0m=[35m1522.5015873791426[0m [36mtrace_per_s[0m=[35m0.0[0m [36mwall_time_s[0m=[35m204.50004023400106[0m
+
+                          Workload metrics                          
+                    completed=0/1  trace/s=0.00                     
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Metric                ┃ Overall ┃ Last 30s Window ┃ Steady State ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ total prompt tok/s    │ 1431.54 │         1805.44 │      1522.50 │
+│ cached prompt tok/s   │ 1106.16 │         1607.74 │      1289.60 │
+│ uncached prompt tok/s │  325.38 │          197.70 │       232.90 │
+│ completion tok/s      │   59.93 │           55.95 │        56.24 │
+└───────────────────────┴─────────┴─────────────────┴──────────────┘
