@@ -1,0 +1,3 @@
+[submodule "phase-1/trie"]
+	path = phase-1/trie
+	url = https://github.com/Applied-Compute/trie
