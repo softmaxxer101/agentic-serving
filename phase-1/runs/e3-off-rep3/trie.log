@@ -1,0 +1,26 @@
+[[32m[1minfo     [0m] [1mstarting benchmark            [0m [36mconcurrency[0m=[35m4[0m [36mduration[0m=[35m60.0[0m [36mmodel[0m=[35mQwen/Qwen3-0.6B[0m [36mnum_gpus[0m=[35mNone[0m [36mworkload_templates[0m=[35m2[0m
+[[32m[1minfo     [0m] [1mbenchmark complete            [0m [36mcache_hit_rate_pct_max[0m=[35m0.0[0m [36mcache_hit_rate_pct_mean[0m=[35m0.0[0m [36mcache_hit_rate_pct_min[0m=[35m0.0[0m [36mcache_hit_rate_pct_p50[0m=[35m0.0[0m [36mcache_hit_rate_pct_p90[0m=[35m0.0[0m [36mcache_hit_rate_pct_p95[0m=[35m0.0[0m [36mcache_hit_rate_pct_p99[0m=[35m0.0[0m [36mcached_prompt_tok_per_s[0m=[35m675.5951694790245[0m [36mcompleted_requests[0m=[35m16[0m [36mcompletion_tok_per_s[0m=[35m71.54256019267177[0m [36meligible_cache_hit_rate_pct_max[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_mean[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_min[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_p50[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_p90[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_p95[0m=[35m0.0[0m [36meligible_cache_hit_rate_pct_p99[0m=[35m0.0[0m [36mfailed_requests[0m=[35m0[0m [36mlast_30s_window_cached_prompt_tok_per_s[0m=[35m643.4834772661264[0m [36mlast_30s_window_completion_tok_per_s[0m=[35m64.91573461009419[0m [36mlast_30s_window_new_prompt_tok_per_s[0m=[35m209.8663954901143[0m [36mlast_30s_window_prompt_tok_per_s[0m=[35m853.3498727562408[0m [36mlatency_s_max[0m=[35m18.922521216998575[0m [36mlatency_s_mean[0m=[35m14.50144126549992[0m [36mlatency_s_min[0m=[35m10.175108253999497[0m [36mlatency_s_p50[0m=[35m13.729350941500343[0m [36mlatency_s_p90[0m=[35m18.231564282500585[0m [36mlatency_s_p95[0m=[35m18.822599214250204[0m [36mlatency_s_p99[0m=[35m18.9025368164489[0m [36mnew_prompt_tok_per_s[0m=[35m249.25732407553198[0m [36mprompt_tok_per_s[0m=[35m924.8524935545565[0m [36msteady_state_cached_prompt_tok_per_s[0m=[35m701.2594286247835[0m [36msteady_state_completion_tok_per_s[0m=[35m72.69733325263714[0m [36msteady_state_new_prompt_tok_per_s[0m=[35m248.92487526953752[0m [36msteady_state_prompt_tok_per_s[0m=[35m950.184303894321[0m [36mtrace_per_s[0m=[35m0.25369702195982896[0m [36mwall_time_s[0m=[35m63.067354422999415[0m
+
+                             Per-trace metrics                             
+┏━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Metric ┃ Latency (s) ┃ Cache hit rate (%) ┃ Eligible cache hit rate (%) ┃
+┡━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ mean   │      14.501 │                0.0 │                         0.0 │
+│ min    │      10.175 │                0.0 │                         0.0 │
+│ p50    │      13.729 │                0.0 │                         0.0 │
+│ p90    │      18.232 │                0.0 │                         0.0 │
+│ p95    │      18.823 │                0.0 │                         0.0 │
+│ p99    │      18.903 │                0.0 │                         0.0 │
+│ max    │      18.923 │                0.0 │                         0.0 │
+└────────┴─────────────┴────────────────────┴─────────────────────────────┘
+
+                          Workload metrics                          
+                   completed=16/16  trace/s=0.25                    
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Metric                ┃ Overall ┃ Last 30s Window ┃ Steady State ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ total prompt tok/s    │  924.85 │          853.35 │       950.18 │
+│ cached prompt tok/s   │  675.60 │          643.48 │       701.26 │
+│ uncached prompt tok/s │  249.26 │          209.87 │       248.92 │
+│ completion tok/s      │   71.54 │           64.92 │        72.70 │
+└───────────────────────┴─────────┴─────────────────┴──────────────┘

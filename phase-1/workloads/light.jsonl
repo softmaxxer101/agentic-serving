@@ -1,0 +1,2 @@
+{"input_prompt_length":512,"num_turns":4,"assistant_response_length":[48,64,52,70],"tool_call_output_length":[120,180,90,140],"tool_call_latency":[0.2,0.4,0.1,0.3],"final_assistant_response_length":80}
+{"input_prompt_length":400,"num_turns":3,"assistant_response_length":[40,55,60],"tool_call_output_length":[100,150,80],"tool_call_latency":[0.1,0.3,0.2],"final_assistant_response_length":70}

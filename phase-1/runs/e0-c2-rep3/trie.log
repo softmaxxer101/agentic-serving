@@ -1,0 +1,26 @@
+[[32m[1minfo     [0m] [1mstarting benchmark            [0m [36mconcurrency[0m=[35m2[0m [36mduration[0m=[35m60.0[0m [36mmodel[0m=[35mQwen/Qwen3-0.6B[0m [36mnum_gpus[0m=[35mNone[0m [36mworkload_templates[0m=[35m2[0m
+[[32m[1minfo     [0m] [1mbenchmark complete            [0m [36mcache_hit_rate_pct_max[0m=[35m75.52258934592044[0m [36mcache_hit_rate_pct_mean[0m=[35m72.85786444436368[0m [36mcache_hit_rate_pct_min[0m=[35m68.58924395947[0m [36mcache_hit_rate_pct_p50[0m=[35m72.70940800786047[0m [36mcache_hit_rate_pct_p90[0m=[35m75.4547496070065[0m [36mcache_hit_rate_pct_p95[0m=[35m75.48866947646347[0m [36mcache_hit_rate_pct_p99[0m=[35m75.51580537202905[0m [36mcached_prompt_tok_per_s[0m=[35m422.48695671705735[0m [36mcompleted_requests[0m=[35m11[0m [36mcompletion_tok_per_s[0m=[35m43.498380496982506[0m [36meligible_cache_hit_rate_pct_max[0m=[35m99.29232444202503[0m [36meligible_cache_hit_rate_pct_mean[0m=[35m97.91888502776601[0m [36meligible_cache_hit_rate_pct_min[0m=[35m93.73020899303357[0m [36meligible_cache_hit_rate_pct_p50[0m=[35m98.4759671746776[0m [36meligible_cache_hit_rate_pct_p90[0m=[35m99.23830250272034[0m [36meligible_cache_hit_rate_pct_p95[0m=[35m99.2653134723727[0m [36meligible_cache_hit_rate_pct_p99[0m=[35m99.28692224809457[0m [36mfailed_requests[0m=[35m0[0m [36mlast_30s_window_cached_prompt_tok_per_s[0m=[35m372.87771915962037[0m [36mlast_30s_window_completion_tok_per_s[0m=[35m37.415010462571885[0m [36mlast_30s_window_new_prompt_tok_per_s[0m=[35m123.93722215726936[0m [36mlast_30s_window_prompt_tok_per_s[0m=[35m496.8149413168897[0m [36mlatency_s_max[0m=[35m18.107296049999604[0m [36mlatency_s_mean[0m=[35m12.032578037545385[0m [36mlatency_s_min[0m=[35m7.884095234000597[0m [36mlatency_s_p50[0m=[35m11.743445443000383[0m [36mlatency_s_p90[0m=[35m15.986575068000093[0m [36mlatency_s_p95[0m=[35m17.04693555899985[0m [36mlatency_s_p99[0m=[35m17.895223951799654[0m [36mnew_prompt_tok_per_s[0m=[35m145.0679238319088[0m [36mprompt_tok_per_s[0m=[35m567.5548805489661[0m [36msteady_state_cached_prompt_tok_per_s[0m=[35m421.31328238231305[0m [36msteady_state_completion_tok_per_s[0m=[35m42.19930729583302[0m [36msteady_state_new_prompt_tok_per_s[0m=[35m131.91423280250487[0m [36msteady_state_prompt_tok_per_s[0m=[35m553.227515184818[0m [36mtrace_per_s[0m=[35m0.15122698655714525[0m [36mwall_time_s[0m=[35m72.73834022899973[0m
+
+                             Per-trace metrics                             
+┏━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Metric ┃ Latency (s) ┃ Cache hit rate (%) ┃ Eligible cache hit rate (%) ┃
+┡━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ mean   │      12.033 │               72.9 │                        97.9 │
+│ min    │       7.884 │               68.6 │                        93.7 │
+│ p50    │      11.743 │               72.7 │                        98.5 │
+│ p90    │      15.987 │               75.5 │                        99.2 │
+│ p95    │      17.047 │               75.5 │                        99.3 │
+│ p99    │      17.895 │               75.5 │                        99.3 │
+│ max    │      18.107 │               75.5 │                        99.3 │
+└────────┴─────────────┴────────────────────┴─────────────────────────────┘
+
+                          Workload metrics                          
+                   completed=11/11  trace/s=0.15                    
+┏━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Metric                ┃ Overall ┃ Last 30s Window ┃ Steady State ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ total prompt tok/s    │  567.55 │          496.81 │       553.23 │
+│ cached prompt tok/s   │  422.49 │          372.88 │       421.31 │
+│ uncached prompt tok/s │  145.07 │          123.94 │       131.91 │
+│ completion tok/s      │   43.50 │           37.42 │        42.20 │
+└───────────────────────┴─────────┴─────────────────┴──────────────┘
