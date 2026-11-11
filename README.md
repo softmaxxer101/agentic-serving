@@ -121,30 +121,6 @@ The focus shifts toward:
 
 Phase 2 should not be treated as a direct speed comparison with Phase 0. The model size, hardware, parallelism, tokenizer behavior, and server configuration will differ. The comparison is primarily methodological and architectural.
 
-## Repository Layout
-
-```text
-agentic-serving-project/
-├── phase-0/
-│   ├── harness/          Customized Python harness
-│   ├── analysis/         Summary and comparison scripts
-│   ├── configs/          vLLM experiment configurations
-│   ├── env/              Hardware and environment records
-│   ├── traces/           Corpus and generated traces
-│   ├── runs/             Phase 0 experiment outputs
-│   └── mock_server/      Local streaming mock server
-├── phase-1/
-│   └── trie/             Cloned Applied-Compute Trie harness
-├── phase-2/
-│   ├── configs/          Qwen3-27B serving configurations
-│   ├── workloads/        Trie workloads used for large-model tests
-│   └── runs/             Phase 2 outputs
-├── analysis/             Cross-phase analysis and plots
-├── notes/                Experimental decisions and observations
-└── README.md
-```
-
-The exact folder names can be adjusted to match the repository. The important boundary is that the customized harness, the Trie harness, and the large-model experiments remain clearly separated.
 
 ## Phase 0 Experiment Coverage
 
