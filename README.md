@@ -1,7 +1,16 @@
-Agentic Serving Benchmark
+Agentic LLM Inference Serving: Qwen3-0.6B to Qwen3.8-27B NVFP4 on Dual RTX 5090s
 
-This project studies inference serving for multi-step agentic workloads across three phases. It begins with a customized local benchmark on Qwen3-0.6B, then moves to the upstream Trie trace-replay harness, and finally applies Trie to a larger Qwen3-27B deployment on stronger hardware.
+This project explores the performance, optimization, and scalability of LLM inference serving for multi-step agentic workloads through three progressive benchmarking phases.
 
+Phase 0: Built a customized benchmarking harness for Qwen3-0.6B to study serving behavior, latency, throughput, concurrency, and prefix caching.
+
+Phase 1: Reproduced the experiments using the upstream Trie trace-replay harness with the same Qwen3-0.6B model.
+
+Phase 2: Scaled the benchmarking methodology to Qwen3.8-27B NVFP4 using the Trie harness on dual NVIDIA RTX 5090 GPUs.
+
+Across these phases, I investigated inference optimizations, KV-cache efficiency, scheduling, batching, CUDA graphs, and multi-GPU serving, analysing their impact on throughput, latency, memory utilization, and overall serving performance.
+
+Interactive analysis of experiment logs: https://softmaxxer101.github.io/agentic-serving/phase-2/index.html
 The project is designed as a progressive inference-engineering study:
 
 ```text
