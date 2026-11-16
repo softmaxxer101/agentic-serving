@@ -1,0 +1,2 @@
+{"input_prompt_length":12288,"num_turns":6,"assistant_response_length":[64,80,96,72,88,104],"tool_call_output_length":[4096,5120,6144,7168,8192,4096],"tool_call_latency":[2.0,3.5,1.8,4.2,2.5,5.0],"final_assistant_response_length":160}
+{"input_prompt_length":16384,"num_turns":5,"assistant_response_length":[72,88,104,80,96],"tool_call_output_length":[5120,6144,7168,8192,6144],"tool_call_latency":[3.0,2.5,4.5,3.8,6.0],"final_assistant_response_length":192}

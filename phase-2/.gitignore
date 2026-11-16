@@ -1,0 +1,14 @@
+__pycache__/
+.venv/
+.mpl-cache/
+*.egg-info/
+*.py[cod]
+runs/*/
+!runs/.gitkeep
+env/local.*
+env/pip-freeze.txt
+*.png
+*.pdf
+/traces/*.jsonl
+/traces/*.meta.json
+!/traces/.gitkeep
