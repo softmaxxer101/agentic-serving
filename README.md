@@ -11,6 +11,7 @@ Phase 2: Scaled the benchmarking methodology to Qwen3.8-27B NVFP4 using the Trie
 Across these phases, I investigated inference optimizations, KV-cache efficiency, scheduling, batching, CUDA graphs, and multi-GPU serving, analysing their impact on throughput, latency, memory utilization, and overall serving performance.
 
 Interactive analysis of experiment logs: https://softmaxxer101.github.io/agentic-serving/phase-2/index.html
+
 The project is designed as a progressive inference-engineering study:
 
 ```text
