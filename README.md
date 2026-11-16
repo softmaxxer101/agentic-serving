@@ -1,4 +1,4 @@
-##Agentic LLM Inference Serving: Qwen3-0.6B to Qwen3.8-27B NVFP4 on Dual RTX 5090s
+## Agentic LLM Inference Serving: Qwen3-0.6B to Qwen3.8-27B NVFP4 on Dual RTX 5090s
 
 This project explores the performance, optimization, and scalability of LLM inference serving for multi-step agentic workloads through three progressive benchmarking phases.
 
